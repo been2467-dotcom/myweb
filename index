@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡表單</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>與我聯繫</h2>
+        <!-- 請將下面的 action 網址替換為你在 Formspree 註冊後得到的表單 ID -->
+        <form action="https://formspree.io/f/xppplokq你的表單ID" method="POST">
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required placeholder="請輸入你的姓名">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">電子郵件</label>
+                <input type="email" id="email" name="email" required placeholder="你的電子信箱">
+            </div>
+
+            <!-- 新增：電話號碼欄位 -->
+            <div class="form-group">
+                <label for="phone">聯絡電話</label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="例：0912345678 或 02-12345678"
+                    pattern="0[0-9]{1,2}-?[0-9]{7,8}" 
+                    title="請輸入有效的電話號碼（例如：0912345678 或 02-12345678）"
+                    required
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="message">訊息內容</label>
+                <textarea id="message" name="message" rows="5" required placeholder="你想說些什麼？"></textarea>
+            </div>
+            
+            <button type="submit">送出訊息</button>
+        </form>
+    </div>
+
+</body>
+</html>
